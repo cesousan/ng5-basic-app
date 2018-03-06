@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
@@ -13,11 +14,13 @@ import { LoginModule } from '@app/features/login/login.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     CoreModule,
     SharedModule,
     LoginModule
   ],
   providers: [],
+  exports: [SharedModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
