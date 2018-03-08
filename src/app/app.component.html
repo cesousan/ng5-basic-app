@@ -1,11 +1,29 @@
-<!-- <div hidden=true style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div> -->
-<!-- <mat-card>
-  <mat-card-header class="centered">
-    <mat-card-title>Welcome to {{ title }}!</mat-card-title>
-  </mat-card-header> -->
-  <app-login class="login centered"></app-login>
-<!-- </mat-card> -->
+<mat-grid-list [cols]="cols" guttersize="16px">
+
+    <mat-grid-tile class="menu-bar"
+    [colspan]="menu.cols"
+    [rowspan]="menu.rows" >
+        MENU !
+        <!-- <app-menu-bar></app-menu-bar>  -->
+    </mat-grid-tile>
+
+    <mat-grid-tile class="side-nav"
+    [colspan]="side.cols"
+    [rowspan]="side.rows" >
+        <app-side-nav></app-side-nav>
+    </mat-grid-tile>
+
+    <mat-grid-tile class="main-content"
+    [colspan]="main.cols"
+    [rowspan]="main.rows" >
+        <router-outlet></router-outlet>
+    </mat-grid-tile>
+
+    <mat-grid-tile class="footer"
+    [colspan]="foot.cols"
+    [rowspan]="foot.rows" >
+        FOOTER !
+        <!-- <app-footer></app-footer> -->
+    </mat-grid-tile>
+
+</mat-grid-list>

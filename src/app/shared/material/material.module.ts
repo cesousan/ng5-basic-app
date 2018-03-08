@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import {
+  MatGridListModule,
   MatMenuModule,
+  MatRadioModule,
   MatButtonModule,
   MatCardModule,
   MatDialogModule,
@@ -17,7 +19,9 @@ import {
 
 @NgModule({
   imports: [
+    MatGridListModule,
     MatMenuModule,
+    MatRadioModule,
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
@@ -32,7 +36,9 @@ import {
     MatSelectModule
   ],
   exports: [
+    MatGridListModule,
     MatMenuModule,
+    MatRadioModule,
     MatButtonModule,
     MatCardModule,
     MatDialogModule,

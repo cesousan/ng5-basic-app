@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-
+    ReactiveFormsModule,
+    /* For custom responsive layouts */
+    FlexLayoutModule,
     /* Custom material module for trimmed imports */
     MaterialModule
   ],
@@ -16,7 +18,9 @@ import { MaterialModule } from './material/material.module';
   exports: [
     CommonModule,
     FormsModule,
-    MaterialModule
+    ReactiveFormsModule,
+    MaterialModule,
+    FlexLayoutModule
   ]
 })
 export class SharedModule { }
