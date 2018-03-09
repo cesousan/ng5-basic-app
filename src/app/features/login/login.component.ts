@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@app/core/services/auth.service';
+import { Router } from '@angular/router';
 
 const AVATAR_URL = 'https://api.adorable.io/avatars/285';
 
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
 
   rdmUser: any;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+              private router: Router) { }
 
   ngOnInit() {
     this.initModel();
@@ -22,6 +24,13 @@ export class LoginComponent implements OnInit {
     return !this.authService.isAuthenticated();
   }
 
+  login(): void {
+    this.goDashboard();
+  }
+
+  goDashboard() {
+    this.router.navigate(['dashboard']);
+  }
 
   private initModel(): void {
     const randomID = this.getRandomId();

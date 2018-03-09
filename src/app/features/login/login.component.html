@@ -1,5 +1,5 @@
 
-<mat-card class="login-card centered">
+<mat-card class="z-depth center" flex="50">
   <img mat-card-image src="assets/img/login.jpg" alt="photo" class="login-img">
   <mat-card-header>
     <img mat-card-avatar class="avatar-img" [src]="rdmUser.avatar" >
@@ -15,6 +15,6 @@
     </mat-form-field>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>LOGIN</button>
+    <button mat-button (click)="login()">LOGIN</button>
   </mat-card-actions>
 </mat-card>

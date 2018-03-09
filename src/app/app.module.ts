@@ -9,20 +9,21 @@ import { SharedModule } from '@app/shared/shared.module';
 import { LoginModule } from '@app/features/login/login.module';
 import { SideNavComponent } from '@app/features/layouts/side-nav/side-nav.component';
 import { AppRoutingModule } from '@app/app-routing.module';
+import { DashboardModule } from '@app/features/layouts/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SideNavComponent
+    AppComponent
   ],
   imports: [
     // browser and animation modules.
     BrowserModule,
     BrowserAnimationsModule,
-    CoreModule,
     // routing module.
     AppRoutingModule,
+    CoreModule,
     SharedModule,
+    // DashboardModule,
     LoginModule
   ],
   providers: [],

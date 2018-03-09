@@ -1,14 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
+/* 
 .centered {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+} */
+
+.flex-shrink, .flex-shrink * {
+    flex-shrink: 1;
 }
-
-body {
-    background-image: url("/assets/img/background.jpg");
-}
-
-

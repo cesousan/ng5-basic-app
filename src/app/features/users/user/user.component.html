@@ -1,0 +1,8 @@
+<mat-card class="mat-elevation-z15" fxFlex fxLayoutAlign="space-between" fxLayout="column">
+  <mat-card-header>
+    <div mat-card-avatar ></div>
+    <mat-card-title>{{user.name}}</mat-card-title>
+    <mat-card-subtitle>{{user.class}}</mat-card-subtitle>
+    <button mat-button (click)="hello(user.name)">Hey!</button>
+  </mat-card-header>
+</mat-card>
