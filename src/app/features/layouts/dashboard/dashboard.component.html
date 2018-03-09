@@ -11,9 +11,8 @@
     <mat-grid-list [cols]="cols | async">
       <mat-grid-tile *ngFor="let card of cards"
                      [colspan]="card.inputs.cols.value | async"
-                     [rowspan]="card.inputs.rows.value | async"
-                     >
-        <app-dashboard-card-spawner [card]="card" style="display: flex">
+                     [rowspan]="card.inputs.rows.value | async" >
+        <app-dashboard-card-spawner [card]="card">
         </app-dashboard-card-spawner>
       </mat-grid-tile>
     </mat-grid-list>

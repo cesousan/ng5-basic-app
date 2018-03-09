@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Injector } from '@angular/core';
+import { Component, OnInit, Input, Injector, EventEmitter, Output } from '@angular/core';
 import { User } from '../../../model/user';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
@@ -14,13 +14,17 @@ export class UsersListComponent extends AbstractDashboardCard implements OnInit 
 
   $users: Observable<User[]> = new Observable<User[]>();
 
+  @Output() componentCloned: EventEmitter<any> = new EventEmitter();
+  @Output() componentDeleted: EventEmitter<any> = new EventEmitter();
+
   constructor(private injector: Injector) {
-    super(injector.get(DashboardCard.metadata.NAME),
+    super(
+      injector.get(DashboardCard.metadata.NAME),
       injector.get(DashboardCard.metadata.ROUTERLINK),
       injector.get(DashboardCard.metadata.ICONCLASS),
       injector.get(DashboardCard.metadata.COLS),
       injector.get(DashboardCard.metadata.ROWS),
-      injector.get(DashboardCard.metadata.COLOR)
+      injector.get(DashboardCard.metadata.COLOR),
     );
     console.log('instanciation of a UsersListComponent!');
   }
@@ -29,8 +33,8 @@ export class UsersListComponent extends AbstractDashboardCard implements OnInit 
     this.$users = of([
       new User('josé', 'specialist'),
       new User('germaine', 'sargeant'),
-      // new User('mike', 'captain'),
-      // new User('washington', 'first class'),
+      new User('mike', 'captain'),
+      new User('washington', 'first class'),
       // new User('jeffrey', 'first class'),
       // new User('rudolf', 'medic'),
       // new User('derek', 'radio'),
@@ -40,5 +44,16 @@ export class UsersListComponent extends AbstractDashboardCard implements OnInit 
   sayMyName(name: string) {
     console.log(name);
   }
+
+
+  clone() {
+    console.log(this);
+    this.componentCloned.emit(this);
+  }
+
+  delete() {
+    this.componentDeleted.emit(this);
+  }
+
 
 }

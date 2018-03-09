@@ -46,4 +46,5 @@ export class DashboardCard {
     get component(): any {
         return this._component;
     }
+
 }

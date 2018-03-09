@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@app/core/services/auth.service';
 import { Router } from '@angular/router';
-
-const AVATAR_URL = 'https://api.adorable.io/avatars/285';
+import { AvatarService } from '../../shared/services/avatar.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +13,8 @@ export class LoginComponent implements OnInit {
   rdmUser: any;
 
   constructor(private authService: AuthService,
-              private router: Router) { }
+              private router: Router,
+              private avatarService: AvatarService) { }
 
   ngOnInit() {
     this.initModel();
@@ -33,14 +33,11 @@ export class LoginComponent implements OnInit {
   }
 
   private initModel(): void {
-    const randomID = this.getRandomId();
+    const randomID = this.avatarService.getRandomId();
     this.rdmUser = {
       id: randomID,
-      avatar: `${AVATAR_URL}/${randomID}.png`
+      avatar: this.avatarService.getAvatarByIdOrRandom(randomID)
     };
   }
 
-  private getRandomId(): number {
-    return Math.floor(Math.random() * 1000000) + 1;
-  }
 }
