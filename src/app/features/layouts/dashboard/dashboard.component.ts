@@ -102,12 +102,12 @@ export class DashboardComponent implements OnInit {
       case 6:
       case 7:
       case 8:
-       numCol = this.cols_sml;
-        numRow = this.cols_big;
+        numCol = this.cols_sml;
+        numRow = this.cols_sml;
         break;
       default:
-      numCol = this.cols_big;
-      numRow = this.cols_big;
+        numCol = this.cols_sml;
+        numRow = this.cols_sml;
     }
     this.cardService.addCard(
       new DashboardCard(
@@ -116,7 +116,8 @@ export class DashboardComponent implements OnInit {
           routerLink: { key: DashboardCard.metadata.ROUTERLINK, value: '/dashboard/users'},
           cols: { key: DashboardCard.metadata.COLS, value: numCol },
           rows: { key: DashboardCard.metadata.ROWS, value: numRow },
-          color: {key: DashboardCard.metadata.COLOR, value: 'blue'}
+          color: { key: DashboardCard.metadata.COLOR, value: 'blue' },
+          iconClass: { key: DashboardCard.metadata.ICONCLASS, value: 'fa=users' },
         }, UsersListComponent
       )
     );

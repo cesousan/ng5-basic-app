@@ -1,0 +1,6 @@
+/* display: flex; align-items: stretch */
+
+:host {
+    height: 100%;
+    width: 100%;
+  }

@@ -6,6 +6,7 @@ export class DashboardCard {
         NAME: new InjectionToken<string>('name'),
         ROUTERLINK: new InjectionToken<string>('routerLink'),
         COLOR: new InjectionToken<string>('color'),
+        ICONCLASS: new InjectionToken<string>('iconClass'),
         COLS: new InjectionToken<Observable<number>>('cols'),
         ROWS: new InjectionToken<Observable<number>>('rows')
      };
@@ -22,6 +23,10 @@ export class DashboardCard {
             color: {
                 key: InjectionToken<string>,
                 value: string,
+            },
+            iconClass: {
+                key: InjectionToken<string>,
+                value: string
             },
             cols: {
                 key: InjectionToken<Observable<number>>,

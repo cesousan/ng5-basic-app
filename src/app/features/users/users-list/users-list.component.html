@@ -1,19 +1,16 @@
-<mat-card style="margin: 15px;" class="mat-elevation-z15" fxFlex fxLayoutAlign="space-between" fxLayout="column">
+<mat-card style="margin: 15px; background: gray;" class="mat-elevation-z15" fxFlex fxLayoutAlign="space-between" fxLayout="column" >
   
   <mat-card-header>
-    <!-- <mat-card-title>{{name}}</mat-card-title> -->
     <mat-card-title>USERS</mat-card-title>    
   </mat-card-header>
-  <mat-card-content *ngFor="let user of $users | async"
-                    fxLayout="column" 
-                    fxLayoutAlign="space-between"
-                    fxFlex >
-    <app-user [user]="user" (sayMyName)="sayMyName($event)" ></app-user>
+  <!-- <mat-card-content *ngFor="let user of $users | async"  fxLayout="column" fxLayoutAlign="space-between" fxFlex> -->
+  <mat-card-content  fxLayout="column" fxLayoutAlign="space-between" fxFlex style="background: dodgerblue;">  
+    <!-- <app-user [user]="user" (sayMyName)="sayMyName($event)" ></app-user> -->
   </mat-card-content>
-  <mat-card-footer>
+  <!-- <mat-card-footer>
     <mat-card-actions fxFlex>
       <button mat-raised-button color="primary" (click)="clone()">clone</button>
       <button mat-raised-button color="primary">delete</button>
     </mat-card-actions>
-  </mat-card-footer>
+  </mat-card-footer> -->
 </mat-card>
